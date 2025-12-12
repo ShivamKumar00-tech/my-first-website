@@ -1,0 +1,404 @@
+/*  Base setup - (Sab elements ke liye basic setting) */
+* {
+  box-sizing: border-box; /* Element ke border aur padding ko size me include karega */
+  margin: 0; /* Sabka default margin hatata hai */
+  padding: 0; /* Sabka default padding hatata hai */
+}
+
+/*  Root variables - (Color aur theme ke liye variables define kiye gaye hain) */
+:root {
+  --bg-dark: #020617; /* Background dark color */
+  --bg-gradient: linear-gradient(135deg, #000814, #001d3d, #000814); /* Background gradient */
+  --accent: #00e0ff; /* Neon blue highlight color */
+  --muted: #94a3b8; /* Light muted text color */
+  --glow: 0 0 15px rgba(0, 224, 255, 0.6); /* Neon glow effect */
+}
+
+/* 🧍‍♂ Body - (Page ka main background aur text style) */
+body {style
+  font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif; /* Font style */
+  background: var(--bg-gradient); /* Background gradient lagaya gaya */
+  color: #e2e8f0; /* Text color */
+  min-height: 100vh; /* Full screen height */
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Left-right scroll disable */
+}
+
+/*  Navbar Section - (Top navigation bar) */
+.nav {
+  display: flex;
+  justify-content: space-between; /* Left aur right part ke beech space */
+  align-items: center;
+  padding: 14px 48px;
+  background: rgba(0, 0, 0, 0.4); /* Transparent black background */
+  backdrop-filter: blur(8px); /* Blur effect */
+  border-bottom: 1px solid rgba(0, 224, 255, 0.2); /* Bottom border line */
+  position: sticky; /* Scroll hone ke baad bhi top par fix */
+  top: 0;
+  z-index: 50; /* Upar dikhane ke liye */
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(var(--glow)); /* Logo ke around glow effect */
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--accent); /* Brand name color */
+  font-size: 20px;
+  text-shadow: var(--glow);
+}
+
+.nav-right {
+  display: flex;
+  gap: 24px; /* Links ke beech gap */
+}
+
+.nav-right a {
+  color: #b3c5db;
+  text-decoration: none; /* Underline remove */
+  font-weight: 600;
+  font-size: 17px;
+  transition: 0.3s; /* Smooth hover transition */
+}
+
+.nav-right a:hover {
+  color: #fff;
+  text-shadow: var(--glow); /* Hover par glow */
+  transform: scale(1.08); /* Thoda bada hone ka effect */
+}
+
+/*  Hero Section - (Main heading and intro part) */
+.hero {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  padding: 60px 120px;
+  background: radial-gradient(circle at top, rgba(0,224,255,0.1), transparent); /* Light radial glow */
+}
+
+.hero-title {
+  font-size: 42px;
+  color: var(--accent); /* Heading color */
+  margin-bottom: 16px;
+  text-shadow: var(--glow);
+}
+
+.hero-sub {
+  color: var(--muted); /* Subtitle color */
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Check Form Section - (Input field + button form) */
+.check-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  max-width: 500px;
+  margin: 40px auto;
+  width: 100%;
+}
+
+.check-form input {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 224, 255, 0.2);
+  font-size: 16px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  box-shadow: inset 0 0 10px rgba(0, 224, 255, 0.2);
+}
+
+.check-form input::placeholder {
+  color: #ccc; /* Placeholder ka color */
+}
+
+.check-form button {
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #000814;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: var(--glow);
+}
+
+.check-form button:hover {
+  background: #00b7ff;
+  transform: scale(1.05); /* Button hover animation */
+}
+
+/* Spotlight / About Section - (About cards or feature section) */
+.spotlight {
+  text-align: center;
+  padding: 80px 20px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.spotlight h2 {
+  font-size: 34px;
+  color: var(--accent);
+  margin-bottom: 40px;
+  text-shadow: var(--glow);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 224, 255, 0.15);
+  color: #f1f5f9;
+  padding: 30px;
+  border-radius: 16px;
+  width: 280px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
+}
+
+.card h3 {
+  color: var(--accent);
+  margin-bottom: 12px;
+  text-shadow: var(--glow);
+}
+
+/* 🔔 Notify Me Section */
+.notify-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(0, 224, 255, 0.15);
+  border-bottom: 1px solid rgba(0, 224, 255, 0.15);
+}
+
+.notify-section h2 {
+  font-size: 32px;
+  color: var(--accent);
+  text-shadow: var(--glow);
+  margin-bottom: 10px;
+}
+
+.notify-section p {
+  color: var(--muted);
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+/* Notify form styling */
+.notify-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.notify-form input {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 224, 255, 0.2);
+  font-size: 16px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  box-shadow: inset 0 0 10px rgba(0, 224, 255, 0.2);
+}
+
+.notify-form input::placeholder {
+  color: #ccc;
+}
+
+.notify-form button {
+  background: var(--accent);
+  color: #000814;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: var(--glow);
+}
+
+.notify-form button:hover {
+  background: #00b7ff;
+  transform: scale(1.05);
+}
+
+/*Membership Section - (Pricing ya plans section) */
+.membership-section {
+  padding: 60px 40px;
+  text-align: center;
+  background: linear-gradient(145deg, #000814, #001d3d);
+  color: #fff;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: var(--glow);
+}
+
+.membership-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card ul {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+  color: #cbd5e1;
+  text-align: left;
+}
+
+/*  Button Styles - (Common buttons ke liye) */
+.btn {
+  background: linear-gradient(135deg, #00b7ff, #0ff);
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.3s;
+  box-shadow: var(--glow);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #0ff, #00b7ff);
+  transform: scale(1.05);
+}
+
+/*  Footer Section - (Page ke neeche ka part) */
+.footer {
+  padding: 18px 6vw;
+  border-top: 1px solid rgba(0, 224, 255, 0.2);
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* --- Features & Notify section styles (append to style.css) --- */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Two-column layout used on features page */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: start;
+  padding: 48px 0;
+}
+@media (max-width: 900px) {
+  .two-col { grid-template-columns: 1fr; padding: 28px 0; }
+}
+
+/* Left column */
+.col h3 {
+  font-size: 22px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.feature-list {
+  list-style: none;
+  color: #cfeaf8;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+.feature-list li {
+  margin: 10px 0;
+  padding-left: 6px;
+}
+
+/* Intro CTA button near hero */
+.intro-btn {
+  display: inline-block;
+  margin-top: 18px;
+  background: linear-gradient(90deg, var(--accent), #7ef0ff);
+  color: #001018;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: var(--glow);
+  transition: transform .12s;
+}
+.intro-btn:hover { transform: translateY(-4px); }
+
+/* Data box (signup card) — matches your theme */
+.data-box {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,224,255,0.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+.data-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--accent);
+}
+.data-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.data-form input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,224,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: #eaf6ff;
+  outline: none;
+}
+.data-form input::placeholder { color: #a8cfe0; }
+.data-form .btn {
+  margin-top: 6px;
+  width: 100%;
+}
+
+/* small responsive tweak */
+@media (max-width: 480px) {
+  .intro-btn { padding: 10px 14px; }
+  .data-box { padding: 16px; }
+}
